@@ -1,16 +1,17 @@
+import { Request, Response } from "express";
 
-
+import { ImportCategoryUseCase } from "./ImportCategoryUseCase";
 
 class ImportCategoryController {
-  constructor(private ImportCategoryUseCase: ImportCategoryUseCase){}
+  constructor(private ImportCategoryUseCase: ImportCategoryUseCase) {}
 
-    handle(request: Request, response: Response): Response {
-        const { file } = request;
+  handle(request: Request, response: Response): Response {
+    const { file } = request;
 
-        this.ImportCategoryUseCase.execute(file);
+    this.ImportCategoryUseCase.execute(file);
 
-        return response.send();
-    }
+    return response.send();
+  }
 }
 
-export { ImportCategoryController}
+export { ImportCategoryController };
